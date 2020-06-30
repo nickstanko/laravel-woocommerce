@@ -10,6 +10,15 @@ class Order extends BaseModel
     use QueryBuilderTrait;
 
     protected $endpoint = 'orders';
+    
+    /*
+     * Network
+     */
+
+    protected function network($options = [])
+    {
+        return WooCommerce::all("orders/network", $options);
+    }
 
     /*
      * Note
